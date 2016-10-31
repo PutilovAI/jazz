@@ -1,0 +1,87 @@
+content-container()
+    margin 0 auto
+    max-width: $content-container
+
+pos-center()
+    position: absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+
+pos-center-w()
+    position: absolute
+    left 50%
+    transform translateX(-50%)
+
+pos-center-h()
+    position: absolute
+    top 50%
+    transform translateY(-50%)
+
+pos-norm()
+    position: relative
+    top auto
+    left auto
+    transform translate(0, 0)
+
+flex-center()
+    display flex
+    align-items: center
+    justify-content: center
+
+
+
+$resolution = 320 375 414 480 667 736 768 1024 1366 1920 2560
+
+//resolution height
+$notebook-h = 6 //768
+$laptop-h   = 7 //1024
+$mobile-h   = 3 //480
+//resolution width
+$pc       = 9 //1920
+$notebook = 8 //1366
+$laptop   = 6 //768
+$mobile   = 0 //320
+
+between($min, $max)
+    if ($min < 100 && $max < 100)
+        $min = $resolution[$min]
+        $max = $resolution[$max] - 1
+    $condition = 'screen and (min-width: %spx) and (max-width: %spx)' % ($min $max)
+    @media $condition
+        {block}
+
+between-h($min, $max)
+    if ($min < 100 && $max < 100)
+        $min = $resolution[$min]
+        $max = $resolution[$max] - 1
+    $condition = 'screen and (min-height: %spx) and (max-height: %spx)' % ($min $max)
+    @media $condition
+        {block}
+
+above($val)
+    if $val < 100
+        $val = $resolution[$val]
+    $condition = 'screen and (min-width: %spx)' % $val
+    @media $condition
+        {block}
+below($val)
+    if $val < 100
+        $val = $resolution[$val]
+    $condition = 'screen and (max-width: %spx)' % $val
+    @media $condition
+        {block}
+
+above-h($val)
+    if $val < 100
+        $val = $resolution[$val]
+    $condition = 'screen and (min-height: %spx)' % $val
+    @media $condition
+        {block}
+
+below-h($val)
+    if $val < 100
+        $val = $resolution[$val]
+    $condition = 'screen and (max-height: %spx)' % $val
+    @media $condition
+        {block}

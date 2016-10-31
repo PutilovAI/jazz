@@ -1,0 +1,53 @@
+.about
+    text-align center
+    &__item
+        margin-bottom 60px
+    &__img
+        display: inline-block;
+        width 100%
+        max-width: image-size('assets/graph.png')[0]
+        margin-bottom 60px
+
+    &__item-title
+        font-size: $fsH4
+        text-transform: uppercase;
+        margin-bottom 20px
+        font-weight: normal
+
+
+
++below($laptop)
+    .about
+        &__item
+            stack()
+        &__img
+            max-width: 480px
+
++below-h($notebook-h)
+    .about
+        &__img
+            margin-bottom 20px
+
++below($laptop - 1)
+    .about
+        & &__button
+            display: none
+        &__item
+            margin-bottom 10px
+
++below-h($notebook-h - 1)
+    .about
+        &__img
+            display: none
+
++below-h($mobile-h)
+    .about
+        &__item
+            margin-bottom: 30px
+        &__item-desc
+            display: none
+
++below-h($mobile)
+    .about
+        &__item
+            margin-bottom: 5px

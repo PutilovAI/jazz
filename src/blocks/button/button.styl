@@ -1,0 +1,54 @@
+button-color($color)
+	&.button_link
+		border-color rgba($color, 0.5)
+		&:hover
+			color $base-fc
+			background-color rgba($color, 0.5)
+			border-color transparent
+
+.button
+	border-radius 0.3em
+	padding 1em 1.3em 1.1em
+	background-color #ecf0f1
+	cursor pointer
+	border none
+	display inline-block
+	text-decoration none
+	color $base-fc-dark
+	text-align center
+	transition all 0.2s linear
+	outline none
+	user-select none
+	text-transform: uppercase
+	box-shadow: 0px 2px 3px 0px rgba(#000, 0.25),inset 0px -2px 0px 0px rgba(#a6a6a6, 1)
+
+
+
+	&:hover
+		color $base-fc-dark
+
+	&_long
+		padding-left: 5em
+		padding-right 5em
+
+	&_link
+		padding 0.8em 1.1em
+		background-color transparent
+		border 2px solid rgba($base-fc, 0.5)
+		color $base-fc
+		text-transform: uppercase
+		border-radius: 2.6em
+		box-shadow: none
+		&:hover
+			color $base-fc-dark
+			background-color $base-fc
+			border-color $base-fc
+
+	$listModColor = (
+		('green' $color-green)\
+		('blue' $color-blue)\
+		('orange' $color-orange)\
+		)
+	for mod in $listModColor
+		&_{mod[0]}
+			button-color(mod[1])

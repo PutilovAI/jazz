@@ -1,0 +1,21 @@
+.popup.popup_form#popup-form-order-1
+    .popup__close.js-popup__close
+
+    .popup__title-block
+        .popup__content
+            .popup__title-text Получить консультацию
+
+    .popup__content-bottom
+        form.form.js-valid-form(action='#')
+            .form__row
+                .input.js-valid-form__item
+                    .input__label.input__label_required(for='id-input-order-name') Ваше имя
+                    input.input__text.input__text_full(type='text', placeholder='Введите имя', id='id-input-order-name')
+                    .input__error.input__error_rel.input__error_reverse.js-valid-form__error Не введено имя
+            .form__row
+                .input.js-valid-form__item
+                    .input__label.input__label_required(for='id-input-order-phone') Ваш телефон
+                    input.input__text.input__text_full.js-mask-phone(type='text', placeholder='+7 (___) ___-__-__', id='id-input-order-phone')
+                    .input__error.input__error_rel.input__error_reverse.js-valid-form__error Не введен номер телефона
+            .form__row.h-align_center.h-mt_25
+                button.button.button_action.js-valid-form__button(type='submit') Заказать

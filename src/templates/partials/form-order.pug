@@ -1,0 +1,17 @@
+h2.section__title.h-display_inline-block.h-ml_30.h-mr_50.h-align_left.h-lh_1
+    |Заказать
+    br
+    |щит:
+form.form.form_gorizontal.h-display_inline-block.h-valign_top.h-mb_60.js-valid-form(action='#')
+    .form__row
+        .input.js-valid-form__item
+            .input__label.input__label_required(for='id-input-order-name') Ваше имя
+            input.input__text(type='text', placeholder='Введите имя', id='id-input-order-name')
+            .input__error.js-valid-form__error Не введено имя
+    .form__row
+        .input.js-valid-form__item
+            .input__label.input__label_required(for='id-input-order-phone') Ваш телефон
+            input.input__text.js-mask-phone(type='text', placeholder='+7 (___) ___-__-__', id='id-input-order-phone')
+            .input__error.js-valid-form__error Не введен номер телефона
+    .form__row
+        button.button.button_action.js-valid-form__button(type='submit') Заказать

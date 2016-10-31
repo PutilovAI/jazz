@@ -1,0 +1,39 @@
+.menu
+    &__item
+        margin-right: 30px
+        display: inline-block;
+        &:last-child
+            margin-right 0
+    &__item-link
+        text-transform: uppercase
+        color: $base-fc
+        text-decoration: none;
+
+    &__button
+        display: none;
+        position: relative
+        width 30px
+        height @width
+        border 2px solid $base-fc
+        border-width 2px 0
+        cursor pointer
+        &:before
+            content ''
+            position: absolute
+            width: 100%
+            height 2px
+            background-color: $base-fc
+            pos-center-h()
+
++below($laptop-h)
+    .menu
+        &__item
+            display block
+        &__items
+            display: none
+            position: absolute
+            top -40px
+            &.active
+                display block
+        &__button
+            display: inline-block

@@ -1,0 +1,23 @@
+.container
+    center(1320px, 50px)
+
+    +below($notebook)
+        center(960px, 30px)
+
+.container-content
+    center( $content-container)
+
++below-h($mobile-h - 1)
+    +below($laptop - 1)
+        .container-content
+            max-width: 100%
+
+.row
+    cf()
+
+for i in (1..12)
+    .col_{i}
+        column(i/12)
+
+    .shift_{i}
+        shift(i/12)
