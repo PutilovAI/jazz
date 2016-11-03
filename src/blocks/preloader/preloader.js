@@ -15,7 +15,7 @@
         $('<img>').attr('src',function(){
             var imgUrl =  $this.css('background-image');
             imgUrl = imgUrl.substring(5, imgUrl.length - 2);
-            console.log(imgUrl)
+
             return imgUrl;
         }).on('load', function(){
            countLoad++;

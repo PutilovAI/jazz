@@ -9,22 +9,32 @@
 
         newTop = curPageScroll + sectionTop;
 
-         $('body, html').animate({scrollTop: newTop +'px'}, 500);
+        $('body, html').animate({scrollTop: newTop +'px'}, 500);
 
     });
 
     var $section = $('.js-section'),
-        $window = $(window);
+        $window = $(window),
+        timerPosCenter = null;
 
-    sectionHeight( $window.outerHeight() );
+    sectionSetHeight( $window.outerHeight() );
 
     $window.on('resize', function(e){
-        sectionHeight( $window.outerHeight() );
+        sectionSetHeight( $window.outerHeight() );
         sectionParllaxBg();
     })
 
+    $(window).on('load', function(){
+        setPosCenter();
+    });
+
     $(document).on('scroll', function(e){
         sectionParllaxBg();
+
+        clearTimeout(timerPosCenter);
+        timerPosCenter = setTimeout(function(){
+            setPosCenter();
+        }, 1000)
     })
 
     function sectionParllaxBg(){
@@ -55,16 +65,42 @@
 
         })
     }
-    function sectionHeight(h){
+
+    function sectionSetHeight(h){
         $section.each(function(ind){
             var height = h;
             var $item = $(this);
-            if (ind > 0 && $section.length - 1) height *= 1.05
+            //if (ind > 0 && $section.length - 1) height *= 1.05
             $item.css({
                 height: height + 'px'
             });
         })
     }
+
+    function setPosCenter(){
+
+        var wScr = $(document).scrollTop(),
+            wH   = $window.outerHeight();
+
+        var a = wScr / wH;
+        var b = parseInt(a);
+        var k = a - b;
+
+        if (k == 0) return;
+
+        var newScr = 0;
+
+        if (k >= 0.5) {
+            newScr = (b + 1) * wH;
+        } else {
+            newScr = b * wH;
+        }
+
+        $('body, html').animate({scrollTop: newScr +'px'}, 500);
+
+    }
+
+
 
 
 

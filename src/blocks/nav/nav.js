@@ -65,6 +65,8 @@
 			//Get the section positions
 			this.getPositions();
 
+
+
 			//Handle scroll changes
 			this.bindInterval();
 
@@ -82,7 +84,7 @@
 		bindInterval: function() {
 			var self = this;
 			var docHeight;
-
+			//self.scrollChange();
 			self.$win.on('scroll.onePageNav', function() {
 				self.didScroll = true;
 			});
