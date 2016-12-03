@@ -245,7 +245,7 @@ $(document).ready(function(){
 
 		var $navItems = $nav.find('.js-nav__item');
 
-		$nav.onePageNav();
+		//$nav.onePageNav();
 	}
 
 });
