@@ -17,7 +17,7 @@
  * });
  */
 
-;(function($, window, document, undefined){
+/*;(function($, window, document, undefined){
 
 	// our plugin constructor
 	var OnePageNav = function(elem, options){
@@ -248,4 +248,4 @@ $(document).ready(function(){
 		//$nav.onePageNav();
 	}
 
-});
+});*/

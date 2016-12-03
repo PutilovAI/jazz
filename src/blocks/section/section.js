@@ -17,24 +17,24 @@
         $window = $(window),
         timerPosCenter = null;
 
-    sectionSetHeight( $window.outerHeight() );
+    //sectionSetHeight( $window.outerHeight() );
 
     $window.on('resize', function(e){
-        sectionSetHeight( $window.outerHeight() );
-        sectionParllaxBg();
+        //sectionSetHeight( $window.outerHeight() );
+        //sectionParllaxBg();
     })
 
-    $(window).on('load', function(){
-        setPosCenter();
-    });
+    // $(window).on('load', function(){
+    //     setPosCenter();
+    // });
 
     $(document).on('scroll', function(e){
-        sectionParllaxBg();
+        //sectionParllaxBg();
 
-        clearTimeout(timerPosCenter);
-        timerPosCenter = setTimeout(function(){
-            setPosCenter();
-        }, 1000)
+        // clearTimeout(timerPosCenter);
+        // timerPosCenter = setTimeout(function(){
+        //     setPosCenter();
+        // }, 1000)
     })
 
     function sectionParllaxBg(){
@@ -48,9 +48,9 @@
                 curTop = $item.offset().top;
 
             if (  curTop >= wScr - ( wH*2) && curTop <= wScr + (wH*2)){
-                $bg.css({
-                    transform: 'translateY('+(wScr-curTop)*0.8+'px)'
-                });
+                // $bg.css({
+                //     transform: 'translateY('+(wScr-curTop)*0.8+'px)'
+                // });
 
                 if ($elPlx.length){
                     var plxValue = $elPlx.data('parallax'),
@@ -70,14 +70,13 @@
         $section.each(function(ind){
             var height = h;
             var $item = $(this);
-            //if (ind > 0 && $section.length - 1) height *= 1.05
             $item.css({
                 height: height + 'px'
             });
         })
     }
 
-    function setPosCenter(){
+    function setPosCenter(){//Авто центр страницы
 
         var wScr = $(document).scrollTop(),
             wH   = $window.outerHeight();

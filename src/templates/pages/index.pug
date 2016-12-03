@@ -3,50 +3,51 @@ extend ../layouts/main
 block content
 	include ../partials/header
 
-	section.section.section_1.js-section#intro&attributes({'data-nav-page':'Начало'})
-		.section__bg.section__bg_1
-		.logo-intro&attributes({"data-parallax":"0.7", "data-parallax-param":'marginTop'})
+	.content.js-scroll-page
+		section.section.section_1.js-section#intro&attributes({'data-nav-page':'Начало'})
+			.section__bg.section__bg_1
+			.logo-intro&attributes({"data-parallax":"0.7", "data-parallax-param":'marginTop'})
 
-	section.section.section_2.js-section#about&attributes({'data-nav-page':'Мы вам понравимся'})
-		.section__bg.section__bg_2
-		.section__content
-			.container
-				.section__title-wrap
-					h2.section__title Интернет-маркетинг — наша стихия
-
-				include ../partials/about
-
-
-	section.section.section_3.js-section#works&attributes({'data-nav-page':'Клиенты довольны'})
-		.section__bg.section__bg_3
-		.section__content
-			.container
-				.section__title-wrap
-					h2.section__title Сайт для бизнеса и души
-
-	section.section.section_4.js-section#conveer&attributes({'data-nav-page':'Одноообразие - боль'})
-		.section__bg.section__bg_4
-		.section__content.section_valign-bot.section__content_full-h
-			.container
-				.section__quote
-					.section__quote-content
-						h2.section__title У нас нет конвеера
-						p.section__quote-noimportant Мы рассматриваем сайт, как мощный маркетинговый инструмент, в основе которого лежит идея. Именно идея делает каждый проект уникальным и интересным, вызывая эмоции у потенциальных клиентов.
-						p Мы не признаем шаблонных решений. Любой, даже небольшой проект мы делаем уникальным и креативным.
-
-	section.section.section_5.js-section#about-tab&attributes({'data-nav-page':'Удивляем'})
-		.section__bg.section__bg_5
-		.section__content.section__content_full-h
-			.section__title-wrap
+		section.section.section_2.js-section#about&attributes({'data-nav-page':'Мы вам понравимся'})
+			.section__bg.section__bg_2
+			.section__content
 				.container
-					h2.section__title The jazz это:
+					.section__title-wrap
+						h2.section__title Интернет-маркетинг — наша стихия
 
-			include ../partials/about-tab
+					include ../partials/about
 
-	section.section.section_6.js-section#request&attributes({'data-nav-page':'Всегда на связи'})
-		.section__bg.section__bg_6
-		.section__content.section__content_full-h.section__content_flex-center
-			include ../partials/form
+
+		section.section.section_3.js-section#works&attributes({'data-nav-page':'Клиенты довольны'})
+			.section__bg.section__bg_3
+			.section__content
+				.container
+					.section__title-wrap
+						h2.section__title Сайт для бизнеса и души
+
+		section.section.section_4.js-section#conveer&attributes({'data-nav-page':'Одноообразие - боль'})
+			.section__bg.section__bg_4
+			.section__content.section_valign-bot.section__content_full-h
+				.container
+					.section__quote
+						.section__quote-content
+							h2.section__title У нас нет конвеера
+							p.section__quote-noimportant Мы рассматриваем сайт, как мощный маркетинговый инструмент, в основе которого лежит идея. Именно идея делает каждый проект уникальным и интересным, вызывая эмоции у потенциальных клиентов.
+							p Мы не признаем шаблонных решений. Любой, даже небольшой проект мы делаем уникальным и креативным.
+
+		section.section.section_5.js-section#about-tab&attributes({'data-nav-page':'Удивляем'})
+			.section__bg.section__bg_5
+			.section__content.section__content_full-h
+				.section__title-wrap
+					.container
+						h2.section__title The jazz это:
+
+				include ../partials/about-tab
+
+		section.section.section_6.js-section#request&attributes({'data-nav-page':'Всегда на связи'})
+			.section__bg.section__bg_6
+			.section__content.section__content_full-h.section__content_flex-center
+				include ../partials/form
 
 
 	.preloader
