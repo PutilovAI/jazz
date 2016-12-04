@@ -4,9 +4,13 @@ $formBgColor2 = #686561
     padding 0 30px
     &__row
         margin-bottom: 20px
+        &_input
+            margin-bottom: 0
         &_submit
             margin-top 40px
             margin-bottom: 0px
+    &__col
+        margin-bottom: 20px
 
     &__container
         position: relative
@@ -14,13 +18,17 @@ $formBgColor2 = #686561
         margin 0 auto
         max-width: 400px
 
-    &__content
+    &__container-inner
         position: relative
         width 100%
         padding 30px
         background-color $formBgColor1
         background-image: linear-gradient(110deg, $formBgColor1 0%,$formBgColor2 50%,$formBgColor1 100%)
         box-shadow: 0px 5px 15px 0px rgba(#000, 0.33)
+        z-index: 2
+
+    &__content
+        position: relative;
         z-index: 2
 
     &__title
@@ -36,13 +44,138 @@ $formBgColor2 = #686561
 
     &__button
         width 100%
+        padding 1.3em 1.3em 1.4em
+
 
     &__branch
         position: absolute
-        width 282px
-        height 244px
+        width image-size('assets/form-branch.png')[0]
+        height image-size('assets/form-branch.png')[1]
         background url(../images/form-branch.png) no-repeat
         background-size 100%
         top -55px
         left -85px
         z-index: 1
+        &_inner
+            display none
+
++below($laptop)
+    +below-h($laptop-h)
+        .form
+            &__container
+                max-width: 280px
+
++between($mobile-h - 1, $laptop)
+    +between-h($laptop - 1, $laptop-h)
+        .form
+            &__container
+                max-width: 360px
+
++below($mobile-h - 1)
+    +below-h($laptop - 1)
+        .form
+            &__container
+                max-width: 100%
+
+//736x480 landscape
++below($laptop - 1)
+    +below-h($mobile-h)
+        @media (orientation:landscape)
+            .form
+                padding 0
+                width: 100%
+                height 100%
+
+                &__container
+                    max-width: 100%
+                    height 100%
+                &__container-inner
+                    height 100%
+                    position: relative
+                    width 100%
+
+                &__row
+                    &_input
+                        display flex
+                        justify-content: space-between;
+                        width 100%
+                        & ^[0]__col
+                            width 48%
+                            margin-bottom: 30px
+                    &_submit
+                        text-align: center;
+                        margin-top: 0
+                &__button
+                    max-width: 48%
+
+                &__branch
+                    top 60px
+                    left 100%
+                    margin-left -86px
+                    &_inner
+                        display block
+                    &_outer
+                        display none
+//320x480
++below($mobile)
+    +below-h($mobile-h)
+        .form
+            padding 0
+            width: 100%
+            height 100%
+
+            &__container
+                max-width: 100%
+                height 100%
+            &__container-inner
+                height 100%
+                position: relative
+                width 100%
+
+            &__row
+                &_input
+                    & ^[0]__col
+                        margin-bottom: 30px
+                &_submit
+                    margin-top: 35px
+            &__button
+                max-width: 100%
+
+            &__branch
+                top 60px
+                left 100%
+                margin-left -86px
+                &_inner
+                    display block
+                &_outer
+                    display none
+
++below($laptop - 1)
+    +below-h($mobile)
+        .form
+            &__row
+                &_input
+                    & ^[0]__col
+                        margin-bottom: 20px
+
++below-h($mobile-h)
+    .form
+        &__container-inner
+            padding-top 120px
+
++below-h($mobile + 1)
+    .form
+        &__container-inner
+            padding-top 105px
+
++below-h($mobile)
+    .form
+        &__container-inner
+            padding-top 75px
+        &__title
+            margin-bottom: 5px
+
++below($mobile)
+    .form
+        &__container-inner
+            padding-top 75px

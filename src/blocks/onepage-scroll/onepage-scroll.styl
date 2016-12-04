@@ -6,7 +6,19 @@
     width 30px
     z-index: 100
     user-select none
+    &__tooltip
+        position: absolute;
+        right 100%
+        width: 200px
+        text-align: right;
+        pos-center-h()
+        transition: all 0.3s ease-in-out
+        visibility: hidden;
+        opacity: 0
+        margin-right 0px
+
     & li
+        position: relative;
         & a
             width 14px
             height @width
@@ -18,6 +30,14 @@
             display block
             padding 0
             outline none
+            &:hover
+                opacity: 0.8
+                &+^[0]__tooltip
+                    visibility: visible;
+                    opacity: 1
+                    margin-right 10px
+                    +below($laptop-h)
+                        display none
 
             &:before
                 display none

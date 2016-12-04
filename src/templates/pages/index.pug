@@ -4,11 +4,11 @@ block content
 	include ../partials/header
 
 	.content.js-scroll-page
-		section.section.section_1.js-section#intro&attributes({'data-nav-page':'Начало'})
+		section.section.section_1.js-section#intro&attributes({'data-nav-tooltip':'Начало'})
 			.section__bg.section__bg_1
 			.logo-intro&attributes({"data-parallax":"0.7", "data-parallax-param":'marginTop'})
 
-		section.section.section_2.js-section#about&attributes({'data-nav-page':'Мы вам понравимся'})
+		section.section.section_2.js-section#about&attributes({'data-nav-tooltip':'Мы вам понравимся'})
 			.section__bg.section__bg_2
 			.section__content
 				.container
@@ -18,14 +18,14 @@ block content
 					include ../partials/about
 
 
-		section.section.section_3.js-section#works&attributes({'data-nav-page':'Клиенты довольны'})
+		section.section.section_3.js-section#works&attributes({'data-nav-tooltip':'Клиенты довольны'})
 			.section__bg.section__bg_3
 			.section__content
 				.container
 					.section__title-wrap
 						h2.section__title Сайт для бизнеса и души
 
-		section.section.section_4.js-section#conveer&attributes({'data-nav-page':'Одноообразие - боль'})
+		section.section.section_4.js-section#conveer&attributes({'data-nav-tooltip':'Одноообразие - боль'})
 			.section__bg.section__bg_4
 			.section__content.section_valign-bot.section__content_full-h
 				.container
@@ -35,7 +35,7 @@ block content
 							p.section__quote-noimportant Мы рассматриваем сайт, как мощный маркетинговый инструмент, в основе которого лежит идея. Именно идея делает каждый проект уникальным и интересным, вызывая эмоции у потенциальных клиентов.
 							p Мы не признаем шаблонных решений. Любой, даже небольшой проект мы делаем уникальным и креативным.
 
-		section.section.section_5.js-section#about-tab&attributes({'data-nav-page':'Удивляем'})
+		section.section.section_5.js-section#about-tab&attributes({'data-nav-tooltip':'Удивляем'})
 			.section__bg.section__bg_5
 			.section__content.section__content_full-h
 				.section__title-wrap
@@ -44,9 +44,9 @@ block content
 
 				include ../partials/about-tab
 
-		section.section.section_6.js-section#request&attributes({'data-nav-page':'Всегда на связи'})
+		section.section.section_6.js-section#request&attributes({'data-nav-tooltip':'Всегда на связи'})
 			.section__bg.section__bg_6
-			.section__content.section__content_full-h.section__content_flex-center
+			.section__content.section__content_full-h.section__content_flex-center.section__content_request
 				include ../partials/form
 
 

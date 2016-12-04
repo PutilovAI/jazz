@@ -216,7 +216,8 @@
     $.each( $sections, function(i) {
         var $curSection = $(this),
             curId = $curSection[0].id,
-            linkHash = curId || i+1;
+            linkHash = curId || i+1,
+            tooltip  = $curSection.data('nav-tooltip');
 
       $curSection.css({
         position: "absolute",
@@ -241,8 +242,13 @@
 
 
       if(settings.pagination == true) {
-        //paginationList += "<li><a data-index='"+(i+1)+"' href='#" + (i+1) + "'></a></li>"
-        paginationList += "<li><a data-index='"+(i+1)+"' href='#" + linkHash + "'></a></li>"
+
+        if (tooltip){
+            paginationList += "<li><a data-index='"+(i+1)+"' href='#" + linkHash + "'></a> <div class='onepage-pagination__tooltip'>"+tooltip+"</div></li>"
+        } else {
+            paginationList += "<li><a data-index='"+(i+1)+"' href='#" + linkHash + "'></a></li>"
+        }
+
       }
     });
 
