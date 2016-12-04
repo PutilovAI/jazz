@@ -4,7 +4,7 @@
     background-repeat: no-repeat
     position relative
     overflow: hidden
-    height: 120%
+    height: 100%
     &:after,&:before
         content: ''
         position: absolute
@@ -17,13 +17,11 @@
     &:after
         bottom 0
         background-image: linear-gradient(to top, rgba(#000, 0.75) 0%, rgba(#000, 0.5) 50%, transparent 100%)
+
     &_valign-bot
         display flex
         align-items: flex-end
         justify-content: center
-
-    &_1
-        height 100%
 
     &__bg
         width 100%
@@ -86,23 +84,13 @@
 
 
     &__scroll-bot
-        position: absolute
-        pos-center-w()
-        flex-center()
-        top -50px
-        width 80px
-        height 80px
-        border-radius 50%
-        background-color: #fff
+        position: relative
+        display: inline-block;
+        imgSize('assets/section-scroll_mouse.png')
+        background-image: url('../images/section-scroll_mouse.png')
+        background-position: center;
+        background-repeat: no-repeat;
         cursor: pointer
-        & .icon
-            opacity: 0.7
-            transition: all 0.3s
-        &:hover
-            & .icon
-                opacity: 1
-        &_below
-            top -20px
 
 
 +below($notebook)
@@ -113,6 +101,9 @@
     .section
         &__quote
             max-width: 660px
+        &__scroll-bot
+            imgSize('assets/section-scroll_hand.png')
+            background-image: url('../images/section-scroll_hand.png')
 
 +below-h($notebook-h)
     .section
@@ -120,6 +111,7 @@
             margin-bottom: 30px
         &__content
             padding 100px 0 55px
+
 +below-h($notebook-h - 1)
     +below($mobile - 1)
         .section

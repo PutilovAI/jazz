@@ -6,8 +6,11 @@ block content
 	.content.js-scroll-page
 		section.section.section_1.js-section#intro&attributes({'data-nav-tooltip':'Начало'})
 			.section__bg.section__bg_1
-			.logo-intro&attributes({"data-parallax":"0.7", "data-parallax-param":'marginTop'})
-
+			.logo-intro
+			.section__content.section_valign-bot.section__content_full-h
+				.container
+					.section__scroll-bot.js-section-scroll
+						
 		section.section.section_2.js-section#about&attributes({'data-nav-tooltip':'Мы вам понравимся'})
 			.section__bg.section__bg_2
 			.section__content
@@ -19,11 +22,15 @@ block content
 
 
 		section.section.section_3.js-section#works&attributes({'data-nav-tooltip':'Клиенты довольны'})
-			.section__bg.section__bg_3
-			.section__content
+			include ../partials/carousel
+			.section__content.h-pb_0
 				.container
-					.section__title-wrap
+					.section__title-wrap.h-mb_0
 						h2.section__title Сайт для бизнеса и души
+
+
+
+
 
 		section.section.section_4.js-section#conveer&attributes({'data-nav-tooltip':'Одноообразие - боль'})
 			.section__bg.section__bg_4

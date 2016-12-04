@@ -8,11 +8,10 @@ const conf = {
       vendor: [
         './src/assets/libs/jquery/jquery.min.js',
         //'./src/assets/libs/jquery-ui/jquery-ui.min.js',
-        //'./src/assets/libs/owl.carousel/dist/owl.carousel.min.js',
+        './src/assets/libs/owl.carousel/dist/owl.carousel.min.js',
         //'./src/assets/libs/selectize/dist/js/standalone/selectize.js',
         './src/assets/libs/jquery.maskedinput/src/jquery.maskedinput.js',
-        //'./src/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-        './src/assets/libs/onepage-scroll/jquery.onepage-scroll.js'
+        //'./src/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
       ],
       dest: "./dist/assets/js"
     },

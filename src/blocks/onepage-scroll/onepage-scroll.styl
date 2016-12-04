@@ -46,3 +46,15 @@
                 opacity: 1
                 width 20px
                 height 20px
++below($laptop-h)
+    .onepage-pagination
+        right 0
+        & li
+            & a
+                width 4px
+                height @width
+                margin 8px auto
+
+                &.active
+                    width 8px
+                    height 8px

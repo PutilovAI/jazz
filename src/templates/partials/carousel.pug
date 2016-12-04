@@ -1,0 +1,12 @@
+.carousel
+    .carousel__owl.js-carousel-work.owl-carousel.js-carousel
+        each item, i in [1,2,3]
+            .carousel__item.js-carousel-item
+                .carousel__item-img.js-carousel-item-img(style="background-image:url(assets/images/slide-"+item+".jpg)")
+                .carousel__item-content
+                    .carousel__item-title Название работы
+                    .carousel__item-desc Промо-сайт чешской красотки. Если Вы подбираете себе семейный автомобиль, у Вас не останется сомнений, когда Вы узнаете все преимущества обновленной модели 2016-го года.
+                    .carousel__item-button
+                        a(href='#').button.button_link Подробнее о работе
+    .carousel__control.carousel__control_prev.js-carousel__control-prev
+    .carousel__control.carousel__control_next.js-carousel__control-next
