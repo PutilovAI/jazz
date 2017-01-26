@@ -24,6 +24,57 @@
             height 2px
             background-color: $base-fc
             pos-center-h()
+.menu-popup
+    position: fixed;
+    z-index: 999
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background: url(../images/menu-popup.jpg) no-repeat center
+    background-size: cover;
+    flex-center()
+    display flex
+    &__close
+        top 20px
+        pos-center-w()
+        width 30px
+        height 30px
+        opacity: 0
+        transition: all 0.3s ease
+        cursor pointer
+        margin-top -40px
+        &:after, &:before
+            content ''
+            position: absolute;
+            left 50%
+            margin-left -2px
+            width 3px
+            height 40px
+            background-color #fff
+
+        &:before
+            transform rotate(45deg)
+        &:after
+            transform rotate(-45deg)
+        &.show
+            opacity: 0.33
+            margin-top 0
+            &:hover
+                opacity: 0.66
+    &__items
+        text-align: center;
+        & .menu__item
+            position: relative;
+            margin-bottom: 30px
+            margin-right: 0
+            position: relative;
+            opacity: 1
+            transition opacity 0.3s ease
+            &:hover
+                opacity: 0.3
+            &:last-child
+                margin-bottom: 0
 
 +below($laptop-h)
     .menu

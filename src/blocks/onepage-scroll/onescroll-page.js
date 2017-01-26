@@ -185,6 +185,7 @@
         });
 
         $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
+            if ($('body').hasClass('popup-open')) return false;
           event.preventDefault();
           var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
           init_scroll(event, delta);
@@ -305,6 +306,7 @@
 
 
     $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
+        if ($('body').hasClass('popup-open')) return false;
       event.preventDefault();
       var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
       if(!$body.hasClass("disabled-onepage-scroll")) init_scroll(event, delta);
@@ -321,6 +323,8 @@
 
     if(settings.keyboard == true) {
       $(document).keydown(function(e) {
+          if ($('body').hasClass('popup-open')) return false;
+
         var tag = e.target.tagName.toLowerCase();
 
         if (!$body.hasClass("disabled-onepage-scroll")) {
